@@ -1,25 +1,24 @@
+#include "main.h"
 #include <stdio.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0
+ * print_fibonacci - prints the first 50 numbers in the Fibonacci sequence,
+ * starting with 1 and 2, followed by a new line.
  */
 int main(void)
 {
-int i, n = 50, t1 = 0, t2 = 1, nextTerm;
+    int i;
+    long int n1 = 1, n2 = 2, next;
 
-for (i = 1; i <= n; ++i)
-{
-printf("%d", t1);
-if (i != n)
-printf(", ");
+    printf("%ld, %ld", n1, n2);
 
-nextTerm = t1 + t2;
-t1 = t2;
-t2 = nextTerm;
-}
-printf("\n");
-
-return (0);
+    for (i = 3; i <= 50; i++)
+    {
+        next = n1 + n2;
+        printf(", %ld", next);
+        n1 = n2;
+        n2 = next;
+    }
+    printf("\n");
+    return (0);
 }
